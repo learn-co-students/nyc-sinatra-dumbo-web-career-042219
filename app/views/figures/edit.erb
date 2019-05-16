@@ -1,0 +1,49 @@
+
+
+<h1>Change a Figure</h1>
+
+<form action="/figures/<%= @figure.id %>" method="POST">
+  <input type="hidden" name="_method" value="PUT">
+  <label>Name:</label>
+  <input type="text" name="figure[name]" id="figure_name" value="<%= @figure.name %>">
+
+  <br>
+
+  <h2>Change your title:</h2>
+  <br>
+  <ul>
+
+  <%@titles.each do |title|%>
+  <li><input type="checkbox" name="figure[title_ids][]" id="title_<%=title.id%>" value="<%=title.id%>" ><%=title.name%></input></li>
+  <!-- title.id ==  -->
+  <!-- angry @figure_titles.where(title_id == title.id) ? "checked" : nil /angry -->
+  <%end%>
+</ul>
+  <br>  <br>
+
+    <label>and/or, create a new title:</label>
+    <br><br>
+    <label>name:</label>
+      <input type="text" id="title_name" name="title[name]"></input>
+    <br><br>
+
+    <h2>Change your landmark:</h2>
+    <br>
+
+    <ul>
+    <% @landmarks.each do |landmark| %>
+    <li>  <input type="checkbox" name="figure[landmark_ids][]" id="<%=landmark.id%>" value="<%=landmark.id%>"><%=landmark.name%></input></li>
+    <%end%>
+    </ul>
+
+    <br>  <br>
+
+      <label>and/or, create a new landmark:</label>
+      <br>
+      <label>name:</label>
+        <input  type="text" id="name" name="landmark[name]"></input>
+        <label>Year</label>
+        <input type="integer" id="year_completed" name="landmark[year_completed]">
+      <br><br>
+  <input type="submit" value="Edit Figure">
+</form>
