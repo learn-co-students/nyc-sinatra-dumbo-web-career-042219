@@ -1,0 +1,26 @@
+<h3>
+    Hi! I'm
+    <%= @figure.name %>!</h3>
+
+<h4> I have the following landmarks:</h4>
+<ul>
+    <% @landmarks.each do |landmark| %>
+        <a href="/landmarks/<%=landmark.id%>">
+            <li>
+                <%= landmark.name %>
+            </li>
+        </a><br>
+        <% end %>
+</ul>
+
+<h4> I have the following titles:</h4>
+<ul>
+    <% @titles.each do |title| %>
+        <li>
+            <%= title.name %>
+        </li>
+        <% end %>
+</ul>
+
+<a class="button" href="/figures/<%= @figure.id %>/edit">Edit Figure</a>
+<a class="button" href="/figures">Figures</a>

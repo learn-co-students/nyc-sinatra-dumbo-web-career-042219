@@ -1,6 +1,13 @@
 <h2>Create New Landmark</h2>
 
 <!-- add content here -->
+<form action="/landmarks" method="post">
+
+  <%= erb :'landmarks/_form' %>
+
+<input type="submit" value="Submit">
+
+</form>
 
 <a class="button" href="/figures">Landmarks</a>
 <a class="button" href="/">Home</a>

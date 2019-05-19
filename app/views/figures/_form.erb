@@ -1,0 +1,20 @@
+Name: <input type="text" name="figure[name]" value="<%= @figure.name %>"><br>
+
+Landmark: 
+  <select name="landmark[id]">
+    <% @landmarks.each do |landmark| %>
+      <option landmark.id == @figure.landmark_id ? "selected" : nil value="<%= landmark.id %>">
+        <%= landmark.name %>
+      </option>          
+    <% end %>
+  </select>
+<br>
+Title: 
+  <select name="title[id]">
+    <% @titles.each do |title| %>
+      <option title.id == @figure.title_id ? "selected" : nil value="<%= title.id %>"><br>
+        <%= title.name %>
+      </option>          
+    <% end %>
+  </select>
+
