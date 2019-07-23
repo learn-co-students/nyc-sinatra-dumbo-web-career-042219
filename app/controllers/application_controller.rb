@@ -4,5 +4,8 @@ class ApplicationController < Sinatra::Base
 
   get '/' do
     erb :"application/index"
+
+    # binding.pry
+
   end
 end

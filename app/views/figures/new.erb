@@ -1,0 +1,26 @@
+<h1>Create a New (hidden) Figure!</h1>
+<form action="/figures" method="POST">
+  Figure Name:<br>
+  <input type="text" name="figure[name]">
+  <br>
+
+  Figure Title:<br>
+  <% @titles.each do |title| %>
+  <input type ="checkbox" name="figure[title_ids][]" value ="<%=title.id%>"> <%= title.name %> </input>
+  <% end %><br>
+  <br>
+  Or, add your own ...
+  <input type="text" id="title_name" name="title[name]">
+  <br>
+  <br>
+  Associated Landmarks:<br>
+  <% @landmarks.each do |landmark| %>
+  <input type="checkbox" name="figure[landmark_ids][]" value ="<%= landmark.id %>"> <%= landmark.name %>  </input>
+  <% end %>
+  <br><br>
+  Or, add your own ...
+  <input type="text" id="landmark_name" name="landmark[name]">
+  <br>
+  <br>
+  <input type="submit" name="Submit">
+  </form>
